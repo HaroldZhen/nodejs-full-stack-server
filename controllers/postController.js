@@ -1,7 +1,7 @@
 const Post = require('../models/PostModel')
 
 async function getPosts(req, res) {
-  const posts = await Post.find().select({ __v: 0 })
+  const posts = await Post.find().sort('createdAt').select({ __v: 0 })
   res.status(200).json({
     statue: 200,
     data: posts,
@@ -9,7 +9,7 @@ async function getPosts(req, res) {
 }
 
 async function getPostsEarliest(req, res) {
-  const posts = await Post.find().sort({ createdAt: -1 }).select({ __v: 0 })
+  const posts = await Post.find().sort('-createdAt').select({ __v: 0 })
   res.status(200).json({
     statue: 200,
     data: posts,
@@ -21,7 +21,7 @@ async function getPostsKeyword(req, res) {
   const posts = await Post.find({
     content: { $regex: keyword, $options: 'i' },
   })
-    .sort({ createdAt: -1 })
+    .sort('createdAt')
     .select({ __v: 0 })
   res.status(200).json({
     statue: 200,
