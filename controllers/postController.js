@@ -18,9 +18,10 @@ async function getPostsEarliest(req, res) {
 
 async function getPostsKeyword(req, res) {
   const keyword = req.url.split('/').pop()
-  const posts = await Post.find({
-    content: { $regex: keyword, $options: 'i' },
-  })
+  const query = (keyword) ? {
+    content: { $regex: decodeURIComponent(keyword)},
+  } : ''
+  const posts = await Post.find(query)
     .sort('createdAt')
     .select({ __v: 0 })
   res.status(200).json({
