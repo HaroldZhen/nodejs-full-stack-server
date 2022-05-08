@@ -52,7 +52,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://secret-basin-09481.herokuapp.com/posts/earliest",
+					"raw": "https://secret-basin-09481.herokuapp.com/posts/keyword/我",
 					"protocol": "https",
 					"host": [
 						"secret-basin-09481",
@@ -61,7 +61,8 @@
 					],
 					"path": [
 						"posts",
-						"earliest"
+						"keyword",
+						"我"
 					]
 				}
 			},

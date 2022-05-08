@@ -9,7 +9,6 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
-    'prettier/prettier': 'error',
     'no-console': 1,
   },
 }
