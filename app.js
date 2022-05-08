@@ -9,6 +9,7 @@ const connectDB = require('./configs/connectMongoose')
 connectDB()
 
 const indexRouter = require('./routes/index')
+const postRouter = require('./routes/posts')
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
+app.use('/posts', postRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
