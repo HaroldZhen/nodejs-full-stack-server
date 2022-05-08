@@ -69,26 +69,6 @@
 			"response": []
 		},
 		{
-			"name": "Get",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://secret-basin-09481.herokuapp.com/posts",
-					"protocol": "https",
-					"host": [
-						"secret-basin-09481",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"posts"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "POST",
 			"request": {
 				"method": "POST",
