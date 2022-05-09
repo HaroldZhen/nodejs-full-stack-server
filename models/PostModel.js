@@ -35,7 +35,7 @@ const PostSchema = new mongoose.Schema(
   },
   {
     versionKey: false,
-  }
+  },
 )
 
 const Post = mongoose.model('Post', PostSchema)
